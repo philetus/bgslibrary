@@ -80,7 +80,7 @@ void LBFuzzyAdaptiveSOM::process(const cv::Mat &img_input, cv::Mat &img_output, 
 
 void LBFuzzyAdaptiveSOM::saveConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/LBFuzzyAdaptiveSOM.xml", 0, CV_STORAGE_WRITE);
+  CvFileStorage* fs = cvOpenFileStorage("./LBFuzzyAdaptiveSOM.xml", 0, CV_STORAGE_WRITE);
 
   cvWriteInt(fs, "sensitivity", sensitivity);
   cvWriteInt(fs, "trainingSensitivity", trainingSensitivity);
@@ -95,7 +95,7 @@ void LBFuzzyAdaptiveSOM::saveConfig()
 
 void LBFuzzyAdaptiveSOM::loadConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/LBFuzzyAdaptiveSOM.xml", 0, CV_STORAGE_READ);
+  CvFileStorage* fs = cvOpenFileStorage("./LBFuzzyAdaptiveSOM.xml", 0, CV_STORAGE_READ);
   
   sensitivity          = cvReadIntByName(fs, 0, "sensitivity", 90);
   trainingSensitivity  = cvReadIntByName(fs, 0, "trainingSensitivity", 240);

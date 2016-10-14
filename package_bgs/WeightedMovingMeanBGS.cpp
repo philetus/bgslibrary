@@ -97,7 +97,7 @@ void WeightedMovingMeanBGS::process(const cv::Mat &img_input, cv::Mat &img_outpu
 
 void WeightedMovingMeanBGS::saveConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/WeightedMovingMeanBGS.xml", 0, CV_STORAGE_WRITE);
+  CvFileStorage* fs = cvOpenFileStorage("./WeightedMovingMeanBGS.xml", 0, CV_STORAGE_WRITE);
 
   cvWriteInt(fs, "enableWeight", enableWeight);
   cvWriteInt(fs, "enableThreshold", enableThreshold);
@@ -110,7 +110,7 @@ void WeightedMovingMeanBGS::saveConfig()
 
 void WeightedMovingMeanBGS::loadConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/WeightedMovingMeanBGS.xml", 0, CV_STORAGE_READ);
+  CvFileStorage* fs = cvOpenFileStorage("./WeightedMovingMeanBGS.xml", 0, CV_STORAGE_READ);
   
   enableWeight = cvReadIntByName(fs, 0, "enableWeight", true);
   enableThreshold = cvReadIntByName(fs, 0, "enableThreshold", true);

@@ -81,7 +81,7 @@ void GMG::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bg
 
 void GMG::saveConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/GMG.xml", 0, CV_STORAGE_WRITE);
+  CvFileStorage* fs = cvOpenFileStorage("./GMG.xml", 0, CV_STORAGE_WRITE);
 
   cvWriteInt(fs, "initializationFrames", initializationFrames);
   cvWriteReal(fs, "decisionThreshold", decisionThreshold);
@@ -92,7 +92,7 @@ void GMG::saveConfig()
 
 void GMG::loadConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/GMG.xml", 0, CV_STORAGE_READ);
+  CvFileStorage* fs = cvOpenFileStorage("./GMG.xml", 0, CV_STORAGE_READ);
   
   initializationFrames = cvReadIntByName(fs, 0, "initializationFrames", 20);
   decisionThreshold = cvReadRealByName(fs, 0, "decisionThreshold", 0.7);

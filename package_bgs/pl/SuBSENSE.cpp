@@ -48,7 +48,7 @@ void SuBSENSEBGS::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat
 
 void SuBSENSEBGS::saveConfig()
 {
-	CvFileStorage* fs = cvOpenFileStorage("./config/SuBSENSEBGS.xml", 0, CV_STORAGE_WRITE);
+	CvFileStorage* fs = cvOpenFileStorage("./SuBSENSEBGS.xml", 0, CV_STORAGE_WRITE);
 
 	cvWriteReal(fs, "fRelLBSPThreshold", fRelLBSPThreshold);
 	cvWriteInt(fs, "nDescDistThresholdOffset", nDescDistThresholdOffset);
@@ -63,7 +63,7 @@ void SuBSENSEBGS::saveConfig()
 
 void SuBSENSEBGS::loadConfig()
 {
-	CvFileStorage* fs = cvOpenFileStorage("./config/SuBSENSEBGS.xml", 0, CV_STORAGE_READ);
+	CvFileStorage* fs = cvOpenFileStorage("./SuBSENSEBGS.xml", 0, CV_STORAGE_READ);
 
 	fRelLBSPThreshold = cvReadRealByName(fs, 0, "fRelLBSPThreshold", BGSSUBSENSE_DEFAULT_LBSP_REL_SIMILARITY_THRESHOLD);
 	nDescDistThresholdOffset = cvReadIntByName(fs, 0, "nDescDistThresholdOffset", BGSSUBSENSE_DEFAULT_DESC_DIST_THRESHOLD_OFFSET);

@@ -138,7 +138,7 @@ cv::Mat WeightedMovingVarianceBGS::computeWeightedVariance(const cv::Mat &img_in
 
 void WeightedMovingVarianceBGS::saveConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/WeightedMovingVarianceBGS.xml", 0, CV_STORAGE_WRITE);
+  CvFileStorage* fs = cvOpenFileStorage("./WeightedMovingVarianceBGS.xml", 0, CV_STORAGE_WRITE);
 
   cvWriteInt(fs, "enableWeight", enableWeight);
   cvWriteInt(fs, "enableThreshold", enableThreshold);
@@ -150,7 +150,7 @@ void WeightedMovingVarianceBGS::saveConfig()
 
 void WeightedMovingVarianceBGS::loadConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/WeightedMovingVarianceBGS.xml", 0, CV_STORAGE_READ);
+  CvFileStorage* fs = cvOpenFileStorage("./WeightedMovingVarianceBGS.xml", 0, CV_STORAGE_READ);
   
   enableWeight = cvReadIntByName(fs, 0, "enableWeight", true);
   enableThreshold = cvReadIntByName(fs, 0, "enableThreshold", true);

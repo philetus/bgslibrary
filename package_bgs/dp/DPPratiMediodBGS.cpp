@@ -82,7 +82,7 @@ void DPPratiMediodBGS::process(const cv::Mat &img_input, cv::Mat &img_output, cv
 
 void DPPratiMediodBGS::saveConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/DPPratiMediodBGS.xml", 0, CV_STORAGE_WRITE);
+  CvFileStorage* fs = cvOpenFileStorage("./DPPratiMediodBGS.xml", 0, CV_STORAGE_WRITE);
 
   cvWriteInt(fs, "threshold", threshold);
   cvWriteInt(fs, "samplingRate", samplingRate);
@@ -95,7 +95,7 @@ void DPPratiMediodBGS::saveConfig()
 
 void DPPratiMediodBGS::loadConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/DPPratiMediodBGS.xml", 0, CV_STORAGE_READ);
+  CvFileStorage* fs = cvOpenFileStorage("./DPPratiMediodBGS.xml", 0, CV_STORAGE_READ);
   
   threshold = cvReadIntByName(fs, 0, "threshold", 30);
   samplingRate = cvReadIntByName(fs, 0, "samplingRate", 5);

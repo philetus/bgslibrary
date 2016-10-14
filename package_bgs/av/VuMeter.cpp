@@ -87,7 +87,7 @@ void VuMeter::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &im
 
 void VuMeter::saveConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/VuMeter.xml", 0, CV_STORAGE_WRITE);
+  CvFileStorage* fs = cvOpenFileStorage("./VuMeter.xml", 0, CV_STORAGE_WRITE);
 
   cvWriteInt(fs, "enableFilter", enableFilter);
   
@@ -102,7 +102,7 @@ void VuMeter::saveConfig()
 
 void VuMeter::loadConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/VuMeter.xml", 0, CV_STORAGE_READ);
+  CvFileStorage* fs = cvOpenFileStorage("./VuMeter.xml", 0, CV_STORAGE_READ);
   
   enableFilter = cvReadIntByName(fs, 0, "enableFilter", true);
   

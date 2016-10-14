@@ -135,7 +135,7 @@ void DPTextureBGS::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Ma
 
 void DPTextureBGS::saveConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/DPTextureBGS.xml", 0, CV_STORAGE_WRITE);
+  CvFileStorage* fs = cvOpenFileStorage("./DPTextureBGS.xml", 0, CV_STORAGE_WRITE);
 
   //cvWriteReal(fs, "alpha", alpha);
   //cvWriteInt(fs, "enableFiltering", enableFiltering);
@@ -146,7 +146,7 @@ void DPTextureBGS::saveConfig()
 
 void DPTextureBGS::loadConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/DPTextureBGS.xml", 0, CV_STORAGE_READ);
+  CvFileStorage* fs = cvOpenFileStorage("./DPTextureBGS.xml", 0, CV_STORAGE_READ);
   
   //alpha = cvReadRealByName(fs, 0, "alpha", 1e-6f);
   //enableFiltering = cvReadIntByName(fs, 0, "enableFiltering", true);

@@ -48,7 +48,7 @@ void LOBSTERBGS::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat 
 
 void LOBSTERBGS::saveConfig()
 {
-	CvFileStorage* fs = cvOpenFileStorage("./config/LOBSTERBGS.xml", 0, CV_STORAGE_WRITE);
+	CvFileStorage* fs = cvOpenFileStorage("./LOBSTERBGS.xml", 0, CV_STORAGE_WRITE);
 
 	cvWriteReal(fs, "fRelLBSPThreshold", fRelLBSPThreshold);
 	cvWriteInt(fs, "nLBSPThresholdOffset", nLBSPThresholdOffset);
@@ -63,7 +63,7 @@ void LOBSTERBGS::saveConfig()
 
 void LOBSTERBGS::loadConfig()
 {
-	CvFileStorage* fs = cvOpenFileStorage("./config/LOBSTERBGS.xml", 0, CV_STORAGE_READ);
+	CvFileStorage* fs = cvOpenFileStorage("./LOBSTERBGS.xml", 0, CV_STORAGE_READ);
 
 	fRelLBSPThreshold = cvReadRealByName(fs, 0, "fRelLBSPThreshold", BGSLOBSTER_DEFAULT_LBSP_REL_SIMILARITY_THRESHOLD);
 	nLBSPThresholdOffset = cvReadIntByName(fs, 0, "nLBSPThresholdOffset", BGSLOBSTER_DEFAULT_LBSP_OFFSET_SIMILARITY_THRESHOLD);

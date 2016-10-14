@@ -114,7 +114,7 @@ void SJN_MultiCueBGS::process(const cv::Mat &img_input, cv::Mat &img_output, cv:
 
 void SJN_MultiCueBGS::saveConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/MultiCueBGS.xml", 0, CV_STORAGE_WRITE);
+  CvFileStorage* fs = cvOpenFileStorage("./MultiCueBGS.xml", 0, CV_STORAGE_WRITE);
 
   cvWriteInt(fs, "showOutput", showOutput);
 
@@ -123,7 +123,7 @@ void SJN_MultiCueBGS::saveConfig()
 
 void SJN_MultiCueBGS::loadConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/MultiCueBGS.xml", 0, CV_STORAGE_READ);
+  CvFileStorage* fs = cvOpenFileStorage("./MultiCueBGS.xml", 0, CV_STORAGE_READ);
 
   showOutput = cvReadIntByName(fs, 0, "showOutput", true);
 

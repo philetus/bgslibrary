@@ -70,7 +70,7 @@ void LbpMrf::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img
 
 void LbpMrf::saveConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/LbpMrf.xml", 0, CV_STORAGE_WRITE);
+  CvFileStorage* fs = cvOpenFileStorage("./LbpMrf.xml", 0, CV_STORAGE_WRITE);
 
   cvWriteInt(fs, "showOutput", showOutput);
 
@@ -79,7 +79,7 @@ void LbpMrf::saveConfig()
 
 void LbpMrf::loadConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/LbpMrf.xml", 0, CV_STORAGE_READ);
+  CvFileStorage* fs = cvOpenFileStorage("./LbpMrf.xml", 0, CV_STORAGE_READ);
 
   showOutput = cvReadIntByName(fs, 0, "showOutput", true);
 

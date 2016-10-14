@@ -84,7 +84,7 @@ void T2FGMM_UM::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &
 
 void T2FGMM_UM::saveConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/T2FGMM_UM.xml", 0, CV_STORAGE_WRITE);
+  CvFileStorage* fs = cvOpenFileStorage("./T2FGMM_UM.xml", 0, CV_STORAGE_WRITE);
 
   cvWriteReal(fs, "threshold", threshold);
   cvWriteReal(fs, "alpha", alpha);
@@ -98,7 +98,7 @@ void T2FGMM_UM::saveConfig()
 
 void T2FGMM_UM::loadConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/T2FGMM_UM.xml", 0, CV_STORAGE_READ);
+  CvFileStorage* fs = cvOpenFileStorage("./T2FGMM_UM.xml", 0, CV_STORAGE_READ);
   
   threshold = cvReadRealByName(fs, 0, "threshold", 9.0);
   alpha = cvReadRealByName(fs, 0, "alpha", 0.01);

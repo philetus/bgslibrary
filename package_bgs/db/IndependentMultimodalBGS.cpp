@@ -37,7 +37,7 @@ void IndependentMultimodalBGS::process(const cv::Mat &img_input, cv::Mat &img_ou
 
 void IndependentMultimodalBGS::saveConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/IndependentMultimodalBGS.xml", 0, CV_STORAGE_WRITE);
+  CvFileStorage* fs = cvOpenFileStorage("./IndependentMultimodalBGS.xml", 0, CV_STORAGE_WRITE);
 
   cvWriteInt(fs, "showOutput", showOutput);
 
@@ -46,7 +46,7 @@ void IndependentMultimodalBGS::saveConfig()
 
 void IndependentMultimodalBGS::loadConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/IndependentMultimodalBGS.xml", 0, CV_STORAGE_READ);
+  CvFileStorage* fs = cvOpenFileStorage("./IndependentMultimodalBGS.xml", 0, CV_STORAGE_READ);
 
   showOutput = cvReadIntByName(fs, 0, "showOutput", true);
 

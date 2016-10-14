@@ -74,7 +74,7 @@ void MixtureOfGaussianV1BGS::process(const cv::Mat &img_input, cv::Mat &img_outp
 
 void MixtureOfGaussianV1BGS::saveConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/MixtureOfGaussianV1BGS.xml", 0, CV_STORAGE_WRITE);
+  CvFileStorage* fs = cvOpenFileStorage("./MixtureOfGaussianV1BGS.xml", 0, CV_STORAGE_WRITE);
 
   cvWriteReal(fs, "alpha", alpha);
   cvWriteInt(fs, "enableThreshold", enableThreshold);
@@ -86,7 +86,7 @@ void MixtureOfGaussianV1BGS::saveConfig()
 
 void MixtureOfGaussianV1BGS::loadConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/MixtureOfGaussianV1BGS.xml", 0, CV_STORAGE_READ);
+  CvFileStorage* fs = cvOpenFileStorage("./MixtureOfGaussianV1BGS.xml", 0, CV_STORAGE_READ);
   
   alpha = cvReadRealByName(fs, 0, "alpha", 0.05);
   enableThreshold = cvReadIntByName(fs, 0, "enableThreshold", true);

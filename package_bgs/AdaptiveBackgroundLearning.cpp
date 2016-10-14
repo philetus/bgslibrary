@@ -84,7 +84,7 @@ void AdaptiveBackgroundLearning::process(const cv::Mat &img_input, cv::Mat &img_
 
 void AdaptiveBackgroundLearning::saveConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/AdaptiveBackgroundLearning.xml", 0, CV_STORAGE_WRITE);
+  CvFileStorage* fs = cvOpenFileStorage("./AdaptiveBackgroundLearning.xml", 0, CV_STORAGE_WRITE);
 
   cvWriteReal(fs, "alpha", alpha);
   cvWriteInt(fs, "limit", limit);
@@ -98,7 +98,7 @@ void AdaptiveBackgroundLearning::saveConfig()
 
 void AdaptiveBackgroundLearning::loadConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/AdaptiveBackgroundLearning.xml", 0, CV_STORAGE_READ);
+  CvFileStorage* fs = cvOpenFileStorage("./AdaptiveBackgroundLearning.xml", 0, CV_STORAGE_READ);
   
   alpha = cvReadRealByName(fs, 0, "alpha", 0.05);
   limit = cvReadIntByName(fs, 0, "limit", -1);

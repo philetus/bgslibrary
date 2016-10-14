@@ -82,7 +82,7 @@ void DPMeanBGS::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &
 
 void DPMeanBGS::saveConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/DPMeanBGS.xml", 0, CV_STORAGE_WRITE);
+  CvFileStorage* fs = cvOpenFileStorage("./DPMeanBGS.xml", 0, CV_STORAGE_WRITE);
 
   cvWriteInt(fs, "threshold", threshold);
   cvWriteReal(fs, "alpha", alpha);
@@ -94,7 +94,7 @@ void DPMeanBGS::saveConfig()
 
 void DPMeanBGS::loadConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/DPMeanBGS.xml", 0, CV_STORAGE_READ);
+  CvFileStorage* fs = cvOpenFileStorage("./DPMeanBGS.xml", 0, CV_STORAGE_READ);
   
   threshold = cvReadIntByName(fs, 0, "threshold", 2700);
   alpha = cvReadRealByName(fs, 0, "alpha", 1e-6f);

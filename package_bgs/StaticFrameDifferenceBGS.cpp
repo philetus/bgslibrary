@@ -58,7 +58,7 @@ void StaticFrameDifferenceBGS::process(const cv::Mat &img_input, cv::Mat &img_ou
 
 void StaticFrameDifferenceBGS::saveConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/StaticFrameDifferenceBGS.xml", 0, CV_STORAGE_WRITE);
+  CvFileStorage* fs = cvOpenFileStorage("./StaticFrameDifferenceBGS.xml", 0, CV_STORAGE_WRITE);
 
   cvWriteInt(fs, "enableThreshold", enableThreshold);
   cvWriteInt(fs, "threshold", threshold);
@@ -69,7 +69,7 @@ void StaticFrameDifferenceBGS::saveConfig()
 
 void StaticFrameDifferenceBGS::loadConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/StaticFrameDifferenceBGS.xml", 0, CV_STORAGE_READ);
+  CvFileStorage* fs = cvOpenFileStorage("./StaticFrameDifferenceBGS.xml", 0, CV_STORAGE_READ);
   
   enableThreshold = cvReadIntByName(fs, 0, "enableThreshold", true);
   threshold = cvReadIntByName(fs, 0, "threshold", 15);

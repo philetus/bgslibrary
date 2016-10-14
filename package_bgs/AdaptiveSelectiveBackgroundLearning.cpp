@@ -106,7 +106,7 @@ void AdaptiveSelectiveBackgroundLearning::process(const cv::Mat &img_input_, cv:
 
 void AdaptiveSelectiveBackgroundLearning::saveConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/AdaptiveSelectiveBackgroundLearning.xml", 0, CV_STORAGE_WRITE);
+  CvFileStorage* fs = cvOpenFileStorage("./AdaptiveSelectiveBackgroundLearning.xml", 0, CV_STORAGE_WRITE);
 
   cvWriteInt(fs, "learningFrames", learningFrames);
   cvWriteReal(fs, "alphaLearn", alphaLearn);
@@ -119,7 +119,7 @@ void AdaptiveSelectiveBackgroundLearning::saveConfig()
 
 void AdaptiveSelectiveBackgroundLearning::loadConfig()
 {
-  CvFileStorage* fs = cvOpenFileStorage("./config/AdaptiveSelectiveBackgroundLearning.xml", 0, CV_STORAGE_READ);
+  CvFileStorage* fs = cvOpenFileStorage("./AdaptiveSelectiveBackgroundLearning.xml", 0, CV_STORAGE_READ);
   
   learningFrames = cvReadIntByName(fs, 0, "learningFrames", 90);
   alphaLearn = cvReadRealByName(fs, 0, "alphaLearn", 0.05);

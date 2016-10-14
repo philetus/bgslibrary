@@ -75,7 +75,7 @@ void KNNBGS::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img
 
 void KNNBGS::saveConfig()
 {
-	CvFileStorage* fs = cvOpenFileStorage("./config/KNNBGS.xml", 0, CV_STORAGE_WRITE);
+	CvFileStorage* fs = cvOpenFileStorage("./KNNBGS.xml", 0, CV_STORAGE_WRITE);
 
 	cvWriteInt(fs, "history", history);
 	cvWriteInt(fs, "nSamples", nSamples);
@@ -91,7 +91,7 @@ void KNNBGS::saveConfig()
 
 void KNNBGS::loadConfig()
 {
-	CvFileStorage* fs = cvOpenFileStorage("./config/KNNBGS.xml", 0, CV_STORAGE_READ);
+	CvFileStorage* fs = cvOpenFileStorage("./KNNBGS.xml", 0, CV_STORAGE_READ);
 
 	history = cvReadIntByName(fs, 0, "history", 500);
 	nSamples = cvReadIntByName(fs, 0, "nSamples", 7);

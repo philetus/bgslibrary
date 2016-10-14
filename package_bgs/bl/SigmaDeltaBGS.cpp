@@ -55,7 +55,7 @@ void SigmaDeltaBGS::process(
 }
 
 void SigmaDeltaBGS::saveConfig() {
-  CvFileStorage* fs = cvOpenFileStorage("./config/SigmaDeltaBGS.xml", 0, CV_STORAGE_WRITE);
+  CvFileStorage* fs = cvOpenFileStorage("./SigmaDeltaBGS.xml", 0, CV_STORAGE_WRITE);
 
   cvWriteInt(fs, "ampFactor", ampFactor);
   cvWriteInt(fs, "minVar", minVar);
@@ -66,7 +66,7 @@ void SigmaDeltaBGS::saveConfig() {
 }
 
 void SigmaDeltaBGS::loadConfig() {
-  CvFileStorage* fs = cvOpenFileStorage("./config/SigmaDeltaBGS.xml", 0, CV_STORAGE_READ);
+  CvFileStorage* fs = cvOpenFileStorage("./SigmaDeltaBGS.xml", 0, CV_STORAGE_READ);
 
   ampFactor = cvReadIntByName(fs, 0, "ampFactor", 1);
   minVar = cvReadIntByName(fs, 0, "minVar", 15);
